@@ -23,7 +23,7 @@ jobs:
           -v $PWD/ext:/work -w /work \
           php:7.4-cli \
           sh -c "
-            apt-get update && apt-get install -y php-dev autoconf gcc g++ make libcurl4-openssl-dev
+            apt-get update && apt-get install -y autoconf gcc g++ make libcurl4-openssl-dev
             phpize
             ./configure
             make
