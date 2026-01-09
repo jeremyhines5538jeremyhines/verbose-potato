@@ -22,8 +22,10 @@ jobs:
         docker run --rm --platform linux/arm64 \
           -v $PWD/ext:/work -w /work \
           php:7.4-cli \
-          sh -c "
-            apt-get update && apt-get install -y autoconf gcc g++ make libcurl4-openssl-dev
+          bash -c "
+            apt-get update
+            apt-get install -y autoconf gcc g++ make libcurl4-openssl-dev
+            cd /work
             phpize
             ./configure
             make
