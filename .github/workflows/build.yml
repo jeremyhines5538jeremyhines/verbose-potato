@@ -27,7 +27,7 @@ jobs:
           -v $PWD/ext:/work -w /work \
           php:${{ matrix.php }}-cli-alpine \
           sh -c "
-            apk add --no-cache autoconf gcc g++ make php${{ matrix.php }}-dev
+            apk add --no-cache autoconf gcc g++ make php-dev
             phpize
             ./configure
             make
