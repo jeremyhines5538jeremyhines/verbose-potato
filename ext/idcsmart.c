@@ -10,13 +10,16 @@
 #define PHP_IDCSMART_VERSION "1.0"
 #define CURLOPT_URL 10002
 
-// 官方公钥特征（用于匹配）
+// 官方公钥特征
 static const char *official_pubkey_needle = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDg6DKmQVwkQCzKcFYb0BBW7N2f";
 
 // 替换公钥 PEM 格式
 static const char *custom_pubkey_pem = "-----BEGIN PUBLIC KEY-----\r\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCvI00BCMWGmpDaMiiWfg1VAHAv\r\nFMMhwFN8v/zfeGllClzuR2SOwBafKEWxIs/XW7yhyciuq4BHDfDPzFKyaiGeuUWV\r\nCrKXTS1j3E6b8WJEBt3TV38O50f0hZ9OTtIcWdy2vg3o4IhRpdK1Duy3xeGQLFCB\r\nKrWUjlUqzS4J1sTncwIDAQAB\r\n-----END PUBLIC KEY-----";
 
-// 模块名（用于隐藏扩展）
+// 官方授权 URL
+static const char *license_url = "https://license.soft13.idcsmart.com/";
+
+// 模块名
 static const char *module_name = "idcsmart";
 
 ZEND_BEGIN_MODULE_GLOBALS(idcsmart)
@@ -44,6 +47,9 @@ static zif_handler original_openssl_pkey_get_public = NULL;
 static zif_handler original_json_decode = NULL;
 static zif_handler original_extension_loaded = NULL;
 static zif_handler original_get_loaded_extensions = NULL;
+static zif_handler original_stream_context_create = NULL;
+static zif_handler original_curl_getinfo = NULL;
+static zif_handler original_file_get_contents = NULL;
 
 // Hook openssl_pkey_get_public - 替换公钥
 PHP_FUNCTION(idcsmart_openssl_pkey_get_public)
@@ -65,19 +71,115 @@ PHP_FUNCTION(idcsmart_openssl_pkey_get_public)
     }
 }
 
+// Hook stream_context_create - 禁用 SSL 验证
+PHP_FUNCTION(idcsmart_stream_context_create)
+{
+    zval *options = NULL;
+    zval *params = NULL;
+    
+    if (zend_parse_parameters(ZEND_NUM_ARGS(), "|a!a!", &options, &params) == FAILURE) {
+        if (original_stream_context_create) {
+            original_stream_context_create(INTERNAL_FUNCTION_PARAM_PASSTHRU);
+        }
+        return;
+    }
+    
+    // 如果有 options 参数，注入 ssl 配置
+    if (options && Z_TYPE_P(options) == IS_ARRAY) {
+        HashTable *ht = Z_ARRVAL_P(options);
+        zval *ssl = zend_hash_str_find(ht, "ssl", sizeof("ssl") - 1);
+        
+        if (ssl && Z_TYPE_P(ssl) == IS_ARRAY) {
+            // ssl 配置已存在，更新它
+            zval false_val;
+            ZVAL_FALSE(&false_val);
+            zend_hash_str_update(Z_ARRVAL_P(ssl), "verify_peer", sizeof("verify_peer") - 1, &false_val);
+            ZVAL_FALSE(&false_val);
+            zend_hash_str_update(Z_ARRVAL_P(ssl), "verify_peer_name", sizeof("verify_peer_name") - 1, &false_val);
+        } else {
+            // 创建 ssl 配置
+            zval ssl_arr;
+            array_init(&ssl_arr);
+            add_assoc_bool(&ssl_arr, "verify_peer", 0);
+            add_assoc_bool(&ssl_arr, "verify_peer_name", 0);
+            zend_hash_str_add(ht, "ssl", sizeof("ssl") - 1, &ssl_arr);
+        }
+    }
+    
+    if (original_stream_context_create) {
+        original_stream_context_create(INTERNAL_FUNCTION_PARAM_PASSTHRU);
+    }
+}
+
+// Hook curl_getinfo - 替换返回的 URL
+PHP_FUNCTION(idcsmart_curl_getinfo)
+{
+    if (original_curl_getinfo) {
+        original_curl_getinfo(INTERNAL_FUNCTION_PARAM_PASSTHRU);
+    }
+    
+    // 如果返回数组，检查并替换 url 字段
+    if (Z_TYPE_P(return_value) == IS_ARRAY) {
+        zval *url = zend_hash_str_find(Z_ARRVAL_P(return_value), "url", sizeof("url") - 1);
+        if (url && Z_TYPE_P(url) == IS_STRING) {
+            char *url_str = Z_STRVAL_P(url);
+            char *custom_url = IDCSMART_G(custom_url);
+            
+            // 如果 URL 以自定义 URL 开头，替换回官方 URL
+            if (custom_url && strlen(custom_url) > 0 && strncmp(url_str, custom_url, strlen(custom_url)) == 0) {
+                size_t custom_len = strlen(custom_url);
+                if (custom_url[custom_len - 1] == '/') custom_len--;
+                
+                char *path = url_str + custom_len;
+                size_t license_len = strlen(license_url);
+                size_t path_len = strlen(path);
+                
+                char *new_url = emalloc(license_len + path_len + 1);
+                strcpy(new_url, license_url);
+                if (new_url[license_len - 1] == '/' && path[0] == '/') {
+                    strcat(new_url, path + 1);
+                } else {
+                    strcat(new_url, path);
+                }
+                
+                zval new_url_zval;
+                ZVAL_STRING(&new_url_zval, new_url);
+                zend_hash_str_update(Z_ARRVAL_P(return_value), "url", sizeof("url") - 1, &new_url_zval);
+                efree(new_url);
+            }
+        }
+    }
+}
+
+// Hook file_get_contents - 阻止访问官方授权 URL
+PHP_FUNCTION(idcsmart_file_get_contents)
+{
+    zval *args = ZEND_CALL_ARG(execute_data, 1);
+    
+    if (ZEND_NUM_ARGS() >= 1 && Z_TYPE_P(args) == IS_STRING) {
+        char *filename = Z_STRVAL_P(args);
+        
+        // 如果是访问官方授权 URL，返回空字符串
+        if (strncmp(filename, license_url, strlen(license_url)) == 0) {
+            RETURN_EMPTY_STRING();
+        }
+    }
+    
+    if (original_file_get_contents) {
+        original_file_get_contents(INTERNAL_FUNCTION_PARAM_PASSTHRU);
+    }
+}
+
 // Hook json_decode - 注入 app 列表
 PHP_FUNCTION(idcsmart_json_decode)
 {
-    // 先调用原始函数
     if (original_json_decode) {
         original_json_decode(INTERNAL_FUNCTION_PARAM_PASSTHRU);
     }
     
-    // 检查返回值是否是数组，且包含授权相关字段
     if (Z_TYPE_P(return_value) == IS_ARRAY) {
         HashTable *ht = Z_ARRVAL_P(return_value);
         
-        // 检查是否是授权数据（包含 system_token 和 install_version 字段）
         zval *system_token = zend_hash_str_find(ht, "system_token", sizeof("system_token") - 1);
         zval *install_version = zend_hash_str_find(ht, "install_version", sizeof("install_version") - 1);
         zval *app = zend_hash_str_find(ht, "app", sizeof("app") - 1);
@@ -85,16 +187,12 @@ PHP_FUNCTION(idcsmart_json_decode)
         if (system_token && install_version && app && Z_TYPE_P(app) == IS_ARRAY) {
             char *custom_app = IDCSMART_G(custom_app);
             
-            // 如果配置了自定义 app 列表，则注入
             if (custom_app && strlen(custom_app) > 1) {
                 HashTable *app_ht = Z_ARRVAL_P(app);
-                
-                // 解析逗号分隔的 app 列表并添加
                 char *app_copy = estrdup(custom_app);
                 char *token = strtok(app_copy, ",");
                 
                 while (token != NULL) {
-                    // 去除首尾空格
                     while (*token == ' ') token++;
                     char *end = token + strlen(token) - 1;
                     while (end > token && *end == ' ') *end-- = '\0';
@@ -119,7 +217,6 @@ PHP_FUNCTION(idcsmart_extension_loaded)
         original_extension_loaded(INTERNAL_FUNCTION_PARAM_PASSTHRU);
     }
     
-    // 检查是否在查询 idcsmart 扩展
     zval *args = ZEND_CALL_ARG(execute_data, 1);
     if (ZEND_NUM_ARGS() >= 1 && Z_TYPE_P(args) == IS_STRING) {
         if (strcasecmp(Z_STRVAL_P(args), module_name) == 0) {
@@ -135,7 +232,6 @@ PHP_FUNCTION(idcsmart_get_loaded_extensions)
         original_get_loaded_extensions(INTERNAL_FUNCTION_PARAM_PASSTHRU);
     }
     
-    // 从返回的数组中移除 idcsmart
     if (Z_TYPE_P(return_value) == IS_ARRAY) {
         HashTable *ht = Z_ARRVAL_P(return_value);
         zend_ulong idx;
@@ -251,7 +347,7 @@ PHP_FUNCTION(idcsmart_curl_setopt_array)
     }
 }
 
-// 覆盖函数的辅助函数
+// 覆盖函数
 static int php_override_function(const char *name, size_t name_len, zif_handler new_handler, zif_handler *original_handler)
 {
     zend_function *func;
@@ -286,6 +382,15 @@ static PHP_MINIT_FUNCTION(idcsmart)
     
     php_override_function("curl_setopt_array", sizeof("curl_setopt_array") - 1,
                           PHP_FN(idcsmart_curl_setopt_array), &original_curl_setopt_array);
+    
+    php_override_function("stream_context_create", sizeof("stream_context_create") - 1,
+                          PHP_FN(idcsmart_stream_context_create), &original_stream_context_create);
+    
+    php_override_function("curl_getinfo", sizeof("curl_getinfo") - 1,
+                          PHP_FN(idcsmart_curl_getinfo), &original_curl_getinfo);
+    
+    php_override_function("file_get_contents", sizeof("file_get_contents") - 1,
+                          PHP_FN(idcsmart_file_get_contents), &original_file_get_contents);
     
     return SUCCESS;
 }
