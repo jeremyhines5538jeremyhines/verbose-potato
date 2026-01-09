@@ -5,9 +5,9 @@
 #include "php.h"
 #include "php_ini.h"
 #include "ext/standard/info.h"
-#include <curl/curl.h>
 
 #define PHP_IDCSMART_VERSION "1.0"
+#define CURLOPT_URL 10002
 
 ZEND_BEGIN_MODULE_GLOBALS(idcsmart)
     char *custom_url;
