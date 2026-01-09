@@ -24,7 +24,7 @@ jobs:
           php:7.4-cli \
           bash -c "
             apt-get update
-            apt-get install -y autoconf gcc g++ make libcurl4-openssl-dev
+            apt-get install -y autoconf automake libtool gcc g++ make pkg-config libcurl4-openssl-dev
             cd /work
             phpize
             ./configure
