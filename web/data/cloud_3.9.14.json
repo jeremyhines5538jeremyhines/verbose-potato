@@ -1,0 +1,15 @@
+{
+    "id": 163,
+    "version": "3.9.14",
+    "description": "新增\r\n1. IP段查询接口(支持通过IP段查询对应的IP绑定实例列表)\r\n\r\n优化\r\n1. 魔方云创建实例页面中切换节点时刷新可选IP",
+    "type": 1,
+    "md5": "",
+    "support_version": "3.6.13",
+    "authorize_type": 0,
+    "update_time": "2025-07-22 11:05:23",
+    "update_type": 0,
+    "single_md5": "",
+    "ctl_md5": "7cdc99375d008c262105fbf6c8c8745d",
+    "web_md5": "cf0ee76331fd3dd67dc724895f55cdb5",
+    "compute_md5": ""
+}

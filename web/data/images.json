@@ -1,0 +1,772 @@
+[
+    {
+        "id": 1,
+        "name": "CentOS-7.6.1810-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-7.6.1810-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "e7a1c07403b6b6065dd7bae6164daf5b"
+    },
+    {
+        "id": 2,
+        "name": "CentOS-8.1.1911-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-8.1.1911-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "ab10ab98751a98fff2b24b5eab446f14"
+    },
+    {
+        "id": 3,
+        "name": "Debian-9.12.1-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":4,\"name\":\"Debian-9.12.1-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "572884cdf406aaadd4e527948af5f665"
+    },
+    {
+        "id": 4,
+        "name": "Debian-10.3.3-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":4,\"name\":\"Debian-10.3.3-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "04d32e3732b709748351bbf95ac243ca"
+    },
+    {
+        "id": 6,
+        "name": "Ubuntu-16.04-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":3,\"name\":\"Ubuntu-16.04-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "428b90f87675631e6b79d2a2156c8f69"
+    },
+    {
+        "id": 7,
+        "name": "Ubuntu-18.04-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":3,\"name\":\"Ubuntu-18.04-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "b4c2f4e059a04e6034d85ee0bad40b1f"
+    },
+    {
+        "id": 8,
+        "name": "Windows-2008R2-Datacenter-cn.qcow2",
+        "version": "3.0.1",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows-2008R2-Datacenter-cn\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "507e226909679bc6083dc1232b3a3c36"
+    },
+    {
+        "id": 9,
+        "name": "Windows-2012R2-Datacenter-cn.qcow2",
+        "version": "3.0.1",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows-2012R2-Datacenter-cn\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "d40fdf098231a0a2ddd7fe4ae5f78e12"
+    },
+    {
+        "id": 10,
+        "name": "Windows-2016-Datacenter-cn.qcow2",
+        "version": "3.0.1",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows-2016-Datacenter-cn\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "1b7a3f0360d9362ea9cfff98caf38a02"
+    },
+    {
+        "id": 11,
+        "name": "Windows-2019-Datacenter-cn.qcow2",
+        "version": "3.0.1",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows-2019-Datacenter-cn\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "e081cbdf2504e5e83963e68975529c85"
+    },
+    {
+        "id": 13,
+        "name": "CentOS-7.0.1406-x64.qcow2",
+        "version": "2.0.6",
+        "support_version": "2.1.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-7.0.1406-x64\"}",
+        "support_init": 0,
+        "status": 1,
+        "md5": "44c35dfeace99d9da3816b507f920676"
+    },
+    {
+        "id": 14,
+        "name": "CentOS-7.1.1503-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-7.1.1503-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "52e71010f96be37125b09245652f618f"
+    },
+    {
+        "id": 15,
+        "name": "CentOS-7.2.1511-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-7.2.1511-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "ee25444d0ed063d1976198a7f4f03558"
+    },
+    {
+        "id": 16,
+        "name": "CentOS-7.3.1611-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-7.3.1611-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "18d34aa16e66e34e895637ce43207a16"
+    },
+    {
+        "id": 17,
+        "name": "CentOS-7.4.1708-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-7.4.1708-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "85026119da6455cffd270c5ddc3faad6"
+    },
+    {
+        "id": 18,
+        "name": "CentOS-7.5.1804-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-7.5.1804-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "33792f18e2acc9230eb9a4e023ebc8be"
+    },
+    {
+        "id": 19,
+        "name": "CentOS-7.7.1908-x64.qcow2",
+        "version": "3.0.1",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-7.7.1908-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "2c8954be31d9203ac9413b8070b1fb3e"
+    },
+    {
+        "id": 20,
+        "name": "CentOS-7.8.2003-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-7.8.2003-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "a1c7f4b717dfb846c2728dee9483c3e3"
+    },
+    {
+        "id": 21,
+        "name": "CentOS-7.8.2003-x64-BT.qcow2",
+        "version": "2.0.6",
+        "support_version": "2.1.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-7.8.2003-x64-BT\"}",
+        "support_init": 0,
+        "status": 1,
+        "md5": "abe96f59db92b277f02640fb3a7aa190"
+    },
+    {
+        "id": 22,
+        "name": "CentOS-8.0.1905-x64.qcow2",
+        "version": "2.0.5",
+        "support_version": "2.1.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-8.0.1905-x64\"}",
+        "support_init": 0,
+        "status": 1,
+        "md5": "2ea85ff647e71282bcfbc8a4c200d69a"
+    },
+    {
+        "id": 23,
+        "name": "CentOS-8.2.2004-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-8.2.2004-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "f2cd9d9e25dc9cf1ff49f980ecec3129"
+    },
+    {
+        "id": 32,
+        "name": "Linux_Rescue.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.6.11",
+        "detailed": "{\"image_group_id\":2,\"name\":\"Linux_Rescue\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "c25ddb07cd1788004277eef0896da438"
+    },
+    {
+        "id": 33,
+        "name": "Windows_Rescue.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.6.11",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows_Rescue\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "15f5f01d514f2e295d6718c69361fde1"
+    },
+    {
+        "id": 34,
+        "name": "CentOS-6.8.1607-x64.qcow2",
+        "version": "3.0.2",
+        "support_version": "3.6.13",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-6.8.1607-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "4bdc5b833ef80285899622e026d2a9f6"
+    },
+    {
+        "id": 35,
+        "name": "CentOS-6.10.1907-x64.qcow2",
+        "version": "3.0.2",
+        "support_version": "3.6.13",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-6.10.1907-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "4c361567ba7c7a6d8e4beedfe5acfea7"
+    },
+    {
+        "id": 36,
+        "name": "Windows-2003-Enterprise-cn.qcow2",
+        "version": "3.0.3",
+        "support_version": "3.5.11",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows-2003-Enterprise-cn\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "d4627eb139882299c7f3b378c9fc3ad2"
+    },
+    {
+        "id": 37,
+        "name": "Windows7_enterprise-cn.qcow2",
+        "version": "3.0.1",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows7_enterprise-cn\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "7739d62ccc891b449b323052b252b3e0"
+    },
+    {
+        "id": 38,
+        "name": "Windows10-cn.qcow2",
+        "version": "3.0.2",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows10-cn\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "017ae0c8f52df3ba02a905fdfd1656ec"
+    },
+    {
+        "id": 39,
+        "name": "Ubuntu-20.04.1-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":3,\"name\":\"Ubuntu-20.04.1-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "42df79c8d99bf4072408e3873dc4a842"
+    },
+    {
+        "id": 40,
+        "name": "CentOS-5.9-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.5.11",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-5.9-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "f4c88eeb6991c95e112963e181a5115f"
+    },
+    {
+        "id": 41,
+        "name": "CentOS-6.3.1206-x64.qcow2",
+        "version": "3.0.3",
+        "support_version": "3.6.13",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-6.3.1206-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "155702d65380b6518a5cfadce8b0fc00"
+    },
+    {
+        "id": 42,
+        "name": "CentOS-6.7.1504-x64.qcow2",
+        "version": "3.0.2",
+        "support_version": "3.6.13",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-6.7.1504-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "2d8ff47751b0d8b228d357386f0a51c4"
+    },
+    {
+        "id": 43,
+        "name": "CentOS-6.9.1704-x64.qcow2",
+        "version": "3.0.2",
+        "support_version": "3.6.13",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-6.9.1704-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "7b08b60064a6ddce2748ad3c69c5d6b2"
+    },
+    {
+        "id": 44,
+        "name": "Fedora-25-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":8,\"name\":\"Fedora-25-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "16332a88de0113377a94f50d319fd650"
+    },
+    {
+        "id": 45,
+        "name": "Fedora-26-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":8,\"name\":\"Fedora-26-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "f61942ee9f9a700a07adf1fbec427654"
+    },
+    {
+        "id": 46,
+        "name": "Fedora-27-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":8,\"name\":\"Fedora-27-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "ffe98da28675b14992dbbcf774984d56"
+    },
+    {
+        "id": 47,
+        "name": "Fedora-28-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":8,\"name\":\"Fedora-28-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "7f58064f19375bcb6ade1bbde917a48f"
+    },
+    {
+        "id": 48,
+        "name": "Fedora-29-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":8,\"name\":\"Fedora-29-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "01ce341003222adf8eb3497f467cf03e"
+    },
+    {
+        "id": 49,
+        "name": "Fedora-30-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":8,\"name\":\"Fedora-30-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "953a4fd2615c0613511da070f2dff1dd"
+    },
+    {
+        "id": 50,
+        "name": "Fedora-31-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":8,\"name\":\"Fedora-31-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "6be7a3c41e0793b6719b28a1c4aa195b"
+    },
+    {
+        "id": 51,
+        "name": "Fedora-32-x64.qcow2",
+        "version": "1.0.0",
+        "support_version": "2.2.0",
+        "detailed": "{\"image_group_id\":8,\"name\":\"Fedora-32-x64\"}",
+        "support_init": 0,
+        "status": 1,
+        "md5": "1ac448ceb1c21e93aa1ff347cc4cb0fc"
+    },
+    {
+        "id": 52,
+        "name": "CentOS-6.10.1907-x32.qcow2",
+        "version": "1.0.1",
+        "support_version": "3.6.13",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-6.10.1907-x32\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "b4398bc3bccffb7a9a6e1092591f3cba"
+    },
+    {
+        "id": 53,
+        "name": "Windows-2008R2-Enterprise-cn.qcow2",
+        "version": "1.0.0",
+        "support_version": "2.2.0",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows-2008R2-Enterprise-cn\"}",
+        "support_init": 0,
+        "status": 1,
+        "md5": "31ccabebcbc1864e80d9d59eb04927f6"
+    },
+    {
+        "id": 57,
+        "name": "Windows-2008R2-Standard-en.qcow2",
+        "version": "1.0.0",
+        "support_version": "2.2.0",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows-2008R2-Standard-en\"}",
+        "support_init": 0,
+        "status": 1,
+        "md5": "ab58671e7c261567aec465b2708e1db3"
+    },
+    {
+        "id": 58,
+        "name": "Windows-2008R2-Datacenter-en.qcow2",
+        "version": "1.0.0",
+        "support_version": "2.2.0",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows-2008R2-Datacenter-en\"}",
+        "support_init": 0,
+        "status": 1,
+        "md5": "3035c8b29766b7bdd54614342f49f09e"
+    },
+    {
+        "id": 60,
+        "name": "Windows-2016-Datacenter-en.qcow2",
+        "version": "1.0.1",
+        "support_version": "2.2.1",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows-2016-Datacenter-en\"}",
+        "support_init": 0,
+        "status": 1,
+        "md5": "c7f64463ccd0ae1c72fc04ec9b939f46"
+    },
+    {
+        "id": 61,
+        "name": "Windows-2019-Datacenter-en.qcow2",
+        "version": "1.0.0",
+        "support_version": "2.2.0",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows-2019-Datacenter-en\"}",
+        "support_init": 0,
+        "status": 1,
+        "md5": "77309972bcc6a8ab4d8d9ac062701076"
+    },
+    {
+        "id": 62,
+        "name": "CentOS-8-Stream-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-8-Stream-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "c25ddb07cd1788004277eef0896da438"
+    },
+    {
+        "id": 63,
+        "name": "Windows-2022-Datacenter-cn.qcow2",
+        "version": "3.0.1",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows-2022-Datacenter-cn\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "c40e290f9f9acfc23eab397d1dcfc8ea"
+    },
+    {
+        "id": 65,
+        "name": "Debian-11.1-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":4,\"name\":\"Debian-11.1-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "c725218eb8c8dece33e6e7deb598b8f4"
+    },
+    {
+        "id": 76,
+        "name": "CentOS-7.9.2111-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-7.9.2111-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "b1480c9ed948e26e28df2f5300d8172e"
+    },
+    {
+        "id": 88,
+        "name": "Ubuntu-22.04-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":3,\"name\":\"Ubuntu-22.04-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "0f3917a353fd80c379ea7a6ef2e7103d"
+    },
+    {
+        "id": 90,
+        "name": "CentOS-8.3.2011-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-8.3.2011-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "ca341f4e5a3e8d563067cc27ff2a4945"
+    },
+    {
+        "id": 91,
+        "name": "CentOS-8.4.2105-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-8.4.2105-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "e84a514320fae0bf5ad161445b2f5387"
+    },
+    {
+        "id": 92,
+        "name": "CentOS-9-Stream-x64.qcow2",
+        "version": "3.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-9-Stream-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "343ebfcbcec5148cab0aae1e15754550"
+    },
+    {
+        "id": 94,
+        "name": "CentOS-8.5.2111-x64.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.6.10",
+        "detailed": "{\"image_group_id\":2,\"name\":\"CentOS-8.5.2111-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "eac98d4698ac7fe7811f02bb8afb4921"
+    },
+    {
+        "id": 95,
+        "name": "Windows-2019-Standard-en.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.3.8",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows-2019-Standard-en\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "7fa77ed9e191c2be9ef1e2c1e7e3b61d"
+    },
+    {
+        "id": 96,
+        "name": "Rocky-linux-8.8-x64.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.6.50",
+        "detailed": "{\"image_group_id\":12,\"name\":\"Rocky-linux-8.8-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "3a1821f81a162f0b8c6725695e040ff7"
+    },
+    {
+        "id": 97,
+        "name": "Rocky-linux-9.2-x64.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.6.50",
+        "detailed": "{\"image_group_id\":12,\"name\":\"Rocky-linux-9.2-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "1090cfa307702ee53817552cfeec7275"
+    },
+    {
+        "id": 98,
+        "name": "AlmaLinux-8.8-x64.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.6.54",
+        "detailed": "{\"image_group_id\":13,\"name\":\"AlmaLinux-8.8-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "fed8b0e10cbe2d4609d1aa78a893e47f"
+    },
+    {
+        "id": 99,
+        "name": "AlmaLinux-9.2-x64.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.6.54",
+        "detailed": "{\"image_group_id\":13,\"name\":\"AlmaLinux-9.2-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "afa98674ae5476ba90d3822279ec268a"
+    },
+    {
+        "id": 100,
+        "name": "OpenEuler-22.03-LTS-SP1-x64.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.6.54",
+        "detailed": "{\"image_group_id\":14,\"name\":\"OpenEuler-22.03-LTS-SP1-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "cb9a9280e24cf7c889b31ea9a92558ad"
+    },
+    {
+        "id": 101,
+        "name": "Windows_en_Rescue.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.7.0",
+        "detailed": "{\"image_group_id\":10,\"name\":\"Windows_en_Rescue\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "eaef636c11395d113b1153d1bfdb37bb"
+    },
+    {
+        "id": 102,
+        "name": "Debian-12.0_x64.qcow2",
+        "version": "1.0.1",
+        "support_version": "3.7.0",
+        "detailed": "{\"image_group_id\":4,\"name\":\"Debian-12.0_x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "2e391131cbd6899a05e4c71cb70f67e0"
+    },
+    {
+        "id": 103,
+        "name": "en-windwos-2012r2.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.6.13",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows-2012R2-Datacenter-en\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "bf55f9ade91896b956288e205d8e5218"
+    },
+    {
+        "id": 104,
+        "name": "openEuler-22.03-LTS.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.6.13",
+        "detailed": "{\"image_group_id\":14,\"name\":\"openEuler-22.03-LTS-SP2\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "861de75ce14027f6688d003cf2ec4cfd"
+    },
+    {
+        "id": 105,
+        "name": "openEuler-24.03-LTS.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.6.13",
+        "detailed": "{\"image_group_id\":14,\"name\":\"openEuler-24.03-LTS\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "d21e4685ed2ebb735a518c859d287308"
+    },
+    {
+        "id": 106,
+        "name": "Ubuntu-24.04.1-x64.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.6.13",
+        "detailed": "{\"image_group_id\":3,\"name\":\"Ubuntu-24.04.1-x64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "3b5dfbc8c57ef555d488948aeeaf6d00"
+    },
+    {
+        "id": 107,
+        "name": "TencentOS-Server-2.4-x86_64.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.9.2",
+        "detailed": "{\"image_group_id\":16,\"name\":\"TencentOS-Server-2.4-x86_64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "d9ae2910b71bfb118dcb4c093da04961"
+    },
+    {
+        "id": 108,
+        "name": "TencentOS-Server-3.1-x86_64.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.9.2",
+        "detailed": "{\"image_group_id\":16,\"name\":\"TencentOS-Server-3.1-x86_64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "51c98df73ddcf0948289cd0e7aec3780"
+    },
+    {
+        "id": 109,
+        "name": "TencentOS-Server-3.3-x86_64.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.9.2",
+        "detailed": "{\"image_group_id\":16,\"name\":\"TencentOS-Server-3.3-x86_64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "f66f34b0ca2433b3561e8e1351f16e35"
+    },
+    {
+        "id": 110,
+        "name": "TencentOS-Server-4.0-x86_64.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.9.2",
+        "detailed": "{\"image_group_id\":16,\"name\":\"TencentOS-Server-4.0-x86_64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "89c5f04f5207c361e8d4c3e97656852c"
+    },
+    {
+        "id": 111,
+        "name": "TencentOS-Server-4.2-x86_64.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.9.2",
+        "detailed": "{\"image_group_id\":16,\"name\":\"TencentOS-Server-4.2-x86_64\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "621bf1208191f396f07db6ce8bf52b0f"
+    },
+    {
+        "id": 112,
+        "name": "Windows11-cn.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.6.13",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows11-cn\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "1b100021c07e76021b3aa638ff7608d9"
+    },
+    {
+        "id": 113,
+        "name": "Ubuntu-24.04-deepseek-r1-1.5b.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.6.13",
+        "detailed": "{\"image_group_id\":3,\"name\":\"Ubuntu-24.04-deepseek-r1-1.5b\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "059bcdf31c229ca75162b79868630dec"
+    },
+    {
+        "id": 114,
+        "name": "Ubuntu24.04.1-vGPU.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.9.8",
+        "detailed": "{\"image_group_id\":3,\"name\":\"Ubuntu24.04.1-vGPU\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "56eb0d4435e3121cd3c97722f3ecb774"
+    },
+    {
+        "id": 115,
+        "name": "Windows11-vGPU.qcow2",
+        "version": "1.0.0",
+        "support_version": "3.9.8",
+        "detailed": "{\"image_group_id\":1,\"name\":\"Windows11-vGPU\"}",
+        "support_init": 1,
+        "status": 1,
+        "md5": "3aa74675337145a20549c16c33a652d7"
+    }
+]

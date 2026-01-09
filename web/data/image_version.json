@@ -1,0 +1,758 @@
+[
+    {
+        "name": "CentOS-7.6.1810-x64.qcow2",
+        "size": "626851840",
+        "support_init": 0,
+        "version": "2.0.4"
+    },
+    {
+        "name": "CentOS-8.1.1911-x64.qcow2",
+        "size": "736428032",
+        "support_init": 0,
+        "version": "2.0.4"
+    },
+    {
+        "name": "Debian-9.12.1-x64.qcow2",
+        "size": "619249664",
+        "support_init": 0,
+        "version": "2.0.5"
+    },
+    {
+        "name": "Debian-10.3.3-x64.qcow2",
+        "size": "644743168",
+        "support_init": 0,
+        "version": "2.0.5"
+    },
+    {
+        "name": "Ubuntu-16.04-x64.qcow2",
+        "size": "813039616",
+        "support_init": 0,
+        "version": "2.0.5"
+    },
+    {
+        "name": "Ubuntu-18.04-x64.qcow2",
+        "size": "1093599232",
+        "support_init": 0,
+        "version": "2.0.5"
+    },
+    {
+        "name": "Windows-2008R2-Datacenter-cn.qcow2",
+        "size": "7601717248",
+        "support_init": 0,
+        "version": "2.0.3"
+    },
+    {
+        "name": "Windows-2012R2-Datacenter-cn.qcow2",
+        "size": "5547163648",
+        "support_init": 0,
+        "version": "2.0.3"
+    },
+    {
+        "name": "Windows-2016-Datacenter-cn.qcow2",
+        "size": "5320605696",
+        "support_init": 0,
+        "version": "2.0.4"
+    },
+    {
+        "name": "Windows-2019-Datacenter-cn.qcow2",
+        "size": "5367595008",
+        "support_init": 0,
+        "version": "2.0.3"
+    },
+    {
+        "name": "CentOS-7.0.1406-x64.qcow2",
+        "size": "408944640",
+        "support_init": 0,
+        "version": "2.0.6"
+    },
+    {
+        "name": "CentOS-7.1.1503-x64.qcow2",
+        "size": "444596224",
+        "support_init": 0,
+        "version": "2.0.6"
+    },
+    {
+        "name": "CentOS-7.2.1511-x64.qcow2",
+        "size": "471859200",
+        "support_init": 0,
+        "version": "2.0.5"
+    },
+    {
+        "name": "CentOS-7.3.1611-x64.qcow2",
+        "size": "591855616",
+        "support_init": 0,
+        "version": "2.0.5"
+    },
+    {
+        "name": "CentOS-7.4.1708-x64.qcow2",
+        "size": "555679744",
+        "support_init": 0,
+        "version": "2.0.5"
+    },
+    {
+        "name": "CentOS-7.5.1804-x64.qcow2",
+        "size": "623837184",
+        "support_init": 0,
+        "version": "2.0.5"
+    },
+    {
+        "name": "CentOS-7.7.1908-x64.qcow2",
+        "size": "695599104",
+        "support_init": 0,
+        "version": "2.0.4"
+    },
+    {
+        "name": "CentOS-7.8.2003-x64.qcow2",
+        "size": "783876096",
+        "support_init": 0,
+        "version": "2.0.4"
+    },
+    {
+        "name": "CentOS-7.8.2003-x64-BT.qcow2",
+        "size": "791478272",
+        "support_init": 0,
+        "version": "2.0.6"
+    },
+    {
+        "name": "CentOS-8.0.1905-x64.qcow2",
+        "size": "782630912",
+        "support_init": 0,
+        "version": "2.0.5"
+    },
+    {
+        "name": "CentOS-8.2.2004-x64.qcow2",
+        "size": "820646400",
+        "support_init": 0,
+        "version": "2.0.5"
+    },
+    {
+        "name": "Linux_Rescue.qcow2",
+        "size": "783876096",
+        "support_init": 0,
+        "version": "2.0.2"
+    },
+    {
+        "name": "Windows_Rescue.qcow2",
+        "size": "6301483008",
+        "support_init": 0,
+        "version": "2.0.2"
+    },
+    {
+        "name": "CentOS-6.8.1607-x64.qcow2",
+        "size": "606732288",
+        "support_init": 0,
+        "version": "2.0.5"
+    },
+    {
+        "name": "CentOS-6.10.1907-x64.qcow2",
+        "size": "328466432",
+        "support_init": 0,
+        "version": "2.0.5"
+    },
+    {
+        "name": "Windows-2003-Enterprise-cn.qcow2",
+        "size": "941948928",
+        "support_init": 0,
+        "version": "1.0.1"
+    },
+    {
+        "name": "Windows7_enterprise-cn.qcow2",
+        "size": "3627810816",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Windows10-cn.qcow2",
+        "size": "5666616832",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Ubuntu-20.04.1-x64.qcow2",
+        "size": "3061841920",
+        "support_init": 0,
+        "version": "1.0.5"
+    },
+    {
+        "name": "CentOS-5.9-x64.qcow2",
+        "size": "491716608",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "CentOS-6.3.1206-x64.qcow2",
+        "size": "272302080",
+        "support_init": 0,
+        "version": "1.0.1"
+    },
+    {
+        "name": "CentOS-6.7.1504-x64.qcow2",
+        "size": "309854208",
+        "support_init": 0,
+        "version": "1.0.1"
+    },
+    {
+        "name": "CentOS-6.9.1704-x64.qcow2",
+        "size": "327942144",
+        "support_init": 0,
+        "version": "1.0.1"
+    },
+    {
+        "name": "Fedora-25-x64.qcow2",
+        "size": "721238528",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Fedora-26-x64.qcow2",
+        "size": "783744000",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Fedora-27-x64.qcow2",
+        "size": "875881984",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Fedora-28-x64.qcow2",
+        "size": "988348416",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Fedora-29-x64.qcow2",
+        "size": "987798016",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Fedora-30-x64.qcow2",
+        "size": "1036778496",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Fedora-31-x64.qcow2",
+        "size": "954148352",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Fedora-32-x64.qcow2",
+        "size": "1047527424",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "CentOS-6.10.1907-x32.qcow2",
+        "size": "319815680",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Windows-2008R2-Enterprise-cn.qcow2",
+        "size": "3658350592",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Windows-2008R2-Standard-en.qcow2",
+        "size": "3622240256",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Windows-2008R2-Datacenter-en.qcow2",
+        "size": "3435069440",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Windows-2016-Datacenter-en.qcow2",
+        "size": "5215813632",
+        "support_init": 0,
+        "version": "1.0.1"
+    },
+    {
+        "name": "Windows-2019-Datacenter-en.qcow2",
+        "size": "4779737088",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "CentOS-8-Stream-x64.qcow2",
+        "size": "1410924544",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Windows-2022-Datacenter-cn.qcow2",
+        "size": "6003621888",
+        "support_init": 0,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Debian-11.1-x64.qcow2",
+        "size": "440532992",
+        "support_init": 0,
+        "version": "1.0.1"
+    },
+    {
+        "name": "CentOS-7.6.1810-x64.qcow2",
+        "size": "825491456",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "Windows-2016-Datacenter-cn.qcow2",
+        "size": "4917304320",
+        "support_init": 1,
+        "version": "3.0.1"
+    },
+    {
+        "name": "Ubuntu-18.04-x64.qcow2",
+        "size": "388431872",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-7.1.1503-x64.qcow2",
+        "size": "812777472",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-7.2.1511-x64.qcow2",
+        "size": "802488320",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-7.3.1611-x64.qcow2",
+        "size": "962330624",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-7.4.1708-x64.qcow2",
+        "size": "773652480",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-7.5.1804-x64.qcow2",
+        "size": "832110592",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-7.7.1908-x64.qcow2",
+        "size": "758029824",
+        "support_init": 1,
+        "version": "3.0.1"
+    },
+    {
+        "name": "CentOS-7.8.2003-x64.qcow2",
+        "size": "791805952",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-7.9.2111-x64.qcow2",
+        "size": "763166720",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-8.1.1911-x64.qcow2",
+        "size": "718340096",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-8.2.2004-x64.qcow2",
+        "size": "1229783040",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-8.3.2011-x64.qcow2",
+        "size": "1323696128",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-8.4.2105-x64.qcow2",
+        "size": "1420558336",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-8-Stream-x64.qcow2",
+        "size": "703991296",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-9-Stream-x64.qcow2",
+        "size": "902561792",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "Debian-9.12.1-x64.qcow2",
+        "size": "667811840",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "Debian-10.3.3-x64.qcow2",
+        "size": "569704448",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "Debian-11.1-x64.qcow2",
+        "size": "253952000",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "Ubuntu-16.04-x64.qcow2",
+        "size": "316276736",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "Ubuntu-20.04.1-x64.qcow2",
+        "size": "595984384",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "Ubuntu-22.04-x64.qcow2",
+        "size": "626458624",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "Windows10-cn.qcow2",
+        "size": "7653949440",
+        "support_init": 1,
+        "version": "3.0.2"
+    },
+    {
+        "name": "Windows-2008R2-Datacenter-cn.qcow2",
+        "size": "4473480704",
+        "support_init": 1,
+        "version": "3.0.1"
+    },
+    {
+        "name": "Windows-2012R2-Datacenter-cn.qcow2",
+        "size": "3860725760",
+        "support_init": 1,
+        "version": "3.0.1"
+    },
+    {
+        "name": "Windows-2019-Datacenter-cn.qcow2",
+        "size": "4899653632",
+        "support_init": 1,
+        "version": "3.0.1"
+    },
+    {
+        "name": "Windows-2022-Datacenter-cn.qcow2",
+        "size": "5028658688",
+        "support_init": 1,
+        "version": "3.0.1"
+    },
+    {
+        "name": "Fedora-25-x64.qcow2",
+        "size": "528023552",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "Fedora-26-x64.qcow2",
+        "size": "590151680",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "Fedora-27-x64.qcow2",
+        "size": "629276672",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "Fedora-28-x64.qcow2",
+        "size": "701038592",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "Fedora-29-x64.qcow2",
+        "size": "758317056",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "Fedora-30-x64.qcow2",
+        "size": "764346368",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "Fedora-31-x64.qcow2",
+        "size": "779485184",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "Windows7_enterprise-cn.qcow2",
+        "size": "3289382912",
+        "support_init": 1,
+        "version": "3.0.1"
+    },
+    {
+        "name": "Windows-2003-Enterprise-cn.qcow2",
+        "size": "957022208",
+        "support_init": 1,
+        "version": "3.0.3"
+    },
+    {
+        "name": "CentOS-5.9-x64.qcow2",
+        "size": "492240896",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-8.5.2111-x64.qcow2",
+        "size": "1135476736",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Windows-2019-Standard-en.qcow2",
+        "size": "5091688448",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Linux_Rescue.qcow2",
+        "size": "703991296",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "Windows_Rescue.qcow2",
+        "size": "5150277632",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-6.10.1907-x64.qcow2",
+        "size": "393609216",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-6.3.1206-x64.qcow2",
+        "size": "378667008",
+        "support_init": 1,
+        "version": "3.0.1"
+    },
+    {
+        "name": "CentOS-6.7.1504-x64.qcow2",
+        "size": "530579456",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-6.9.1704-x64.qcow2",
+        "size": "485031936",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "CentOS-6.8.1607-x64.qcow2",
+        "size": "482738176",
+        "support_init": 1,
+        "version": "3.0.0"
+    },
+    {
+        "name": "Rocky-linux-8.8-x64.qcow2",
+        "size": "1117311488",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Rocky-linux-9.2-x64.qcow2",
+        "size": "1354027520",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "AlmaLinux-8.8-x64.qcow2",
+        "size": "1567416832",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "AlmaLinux-9.2-x64.qcow2",
+        "size": "1756044800",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "OpenEuler-22.03-LTS-SP1-x64.qcow2",
+        "size": "1558434304",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Windows_en_Rescue.qcow2",
+        "size": "6494506496",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Debian-12.0_x64.qcow2",
+        "size": "777388032",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "en-windwos-2012r2.qcow2",
+        "size": "5021827072",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "openEuler-22.03-LTS.qcow2",
+        "size": "1600061440",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "openEuler-24.03-LTS.qcow2",
+        "size": "940376064",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "CentOS-6.10.1907-x64.qcow2",
+        "size": "392048640",
+        "support_init": 1,
+        "version": "3.0.1"
+    },
+    {
+        "name": "CentOS-6.3.1206-x64.qcow2",
+        "size": "299182080",
+        "support_init": 1,
+        "version": "3.0.2"
+    },
+    {
+        "name": "CentOS-6.7.1504-x64.qcow2",
+        "size": "368944128",
+        "support_init": 1,
+        "version": "3.0.1"
+    },
+    {
+        "name": "CentOS-6.8.1607-x64.qcow2",
+        "size": "388807680",
+        "support_init": 1,
+        "version": "3.0.1"
+    },
+    {
+        "name": "CentOS-6.9.1704-x64.qcow2",
+        "size": "397556736",
+        "support_init": 1,
+        "version": "3.0.1"
+    },
+    {
+        "name": "CentOS-6.10.1907-x32.qcow2",
+        "size": "373358592",
+        "support_init": 1,
+        "version": "1.0.1"
+    },
+    {
+        "name": "CentOS-6.10.1907-x64.qcow2",
+        "size": "400413696",
+        "support_init": 1,
+        "version": "3.0.2"
+    },
+    {
+        "name": "CentOS-6.3.1206-x64.qcow2",
+        "size": "309042688",
+        "support_init": 1,
+        "version": "3.0.3"
+    },
+    {
+        "name": "CentOS-6.7.1504-x64.qcow2",
+        "size": "442414592",
+        "support_init": 1,
+        "version": "3.0.2"
+    },
+    {
+        "name": "CentOS-6.8.1607-x64.qcow2",
+        "size": "391887872",
+        "support_init": 1,
+        "version": "3.0.2"
+    },
+    {
+        "name": "CentOS-6.9.1704-x64.qcow2",
+        "size": "413138944",
+        "support_init": 1,
+        "version": "3.0.2"
+    },
+    {
+        "name": "Ubuntu-24.04.1-x64.qcow2",
+        "size": "1800863744",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Windows11-cn.qcow2",
+        "size": "11163202048",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Ubuntu-24.04-deepseek-r1-1.5b.qcow2",
+        "size": "5455282176",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Debian-12.0_x64.qcow2  ",
+        "size": "660668416",
+        "support_init": 1,
+        "version": "1.0.1"
+    },
+    {
+        "name": "Windows-2022-Datacenter-GPT-cn.qcow2",
+        "size": "6912409600",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Windows-2019-Datacenter-GPT-cn.qcow2",
+        "size": "6658719744",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Windows-2016-Datacenter-GPT-cn.qcow2",
+        "size": "6030295040",
+        "support_init": 1,
+        "version": "1.0.0"
+    },
+    {
+        "name": "Mysql5.7.qcow2",
+        "size": "1549271040",
+        "support_init": 1,
+        "version": "1.0.0"
+    }
+]
