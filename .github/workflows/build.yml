@@ -10,10 +10,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        php: ['7.4']
-        arch: ['aarch64', 'x86_64']
     
     steps:
     - uses: actions/checkout@v3
@@ -21,11 +17,11 @@ jobs:
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
       
-    - name: Build for ${{ matrix.arch }}
+    - name: Build for ARM64
       run: |
-        docker run --rm --platform linux/${{ matrix.arch == 'x86_64' && 'amd64' || 'arm64' }} \
+        docker run --rm --platform linux/arm64 \
           -v $PWD/ext:/work -w /work \
-          php:${{ matrix.php }}-cli \
+          php:7.4-cli \
           sh -c "
             apt-get update && apt-get install -y php-dev autoconf gcc g++ make libcurl4-openssl-dev
             phpize
@@ -37,5 +33,5 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: idcsmart-php${{ matrix.php }}-${{ matrix.arch }}
+        name: idcsmart-php7.4-aarch64
         path: ext/modules/idcsmart.so
