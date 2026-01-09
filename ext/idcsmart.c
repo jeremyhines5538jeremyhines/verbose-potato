@@ -41,25 +41,34 @@ PHP_FUNCTION(idcsmart_curl_setopt)
         return;
     }
     
+    // 只处理 CURLOPT_URL 选项
     if (options == CURLOPT_URL && Z_TYPE_P(zvalue) == IS_STRING) {
         char *url = Z_STRVAL_P(zvalue);
         char *custom_url = IDCSMART_G(custom_url);
         
-        if ((strstr(url, "idcsmart.com") != NULL || strstr(url, "license.soft13") != NULL) && custom_url && strlen(custom_url) > 0) {
+        // 检查是否是授权URL
+        if (strstr(url, "license.soft13.idcsmart.com") != NULL && custom_url && strlen(custom_url) > 0) {
+            // 提取路径部分
             char *path = strstr(url, "/app/");
             if (!path) path = strstr(url, "/api/");
             if (!path) path = strstr(url, "/market/");
+            if (!path) path = strstr(url, "/upgrade/");
+            if (!path) path = strstr(url, "/tool/");
             
             if (path) {
+                // 构造新URL
                 size_t new_len = strlen(custom_url) + strlen(path) + 1;
                 char *new_url = emalloc(new_len);
                 snprintf(new_url, new_len, "%s%s", custom_url, path);
+                
+                // 替换URL
                 ZVAL_STRING(zvalue, new_url);
                 efree(new_url);
             }
         }
     }
     
+    // 调用原始函数
     if (original_curl_setopt) {
         original_curl_setopt(INTERNAL_FUNCTION_PARAM_PASSTHRU);
     }
