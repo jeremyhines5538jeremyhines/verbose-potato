@@ -5,6 +5,7 @@
 #include "php.h"
 #include "php_ini.h"
 #include "ext/standard/info.h"
+#include <curl/curl.h>
 
 #define PHP_IDCSMART_VERSION "1.0"
 
@@ -26,9 +27,52 @@ PHP_INI_BEGIN()
     STD_PHP_INI_ENTRY("idcsmart.app", "", PHP_INI_ALL, OnUpdateString, custom_app, zend_idcsmart_globals, idcsmart_globals)
 PHP_INI_END()
 
+static zif_handler original_curl_setopt = NULL;
+
+PHP_FUNCTION(idcsmart_curl_setopt)
+{
+    zval *zid, *zvalue;
+    zend_long options;
+    
+    if (zend_parse_parameters(ZEND_NUM_ARGS(), "rlz", &zid, &options, &zvalue) == FAILURE) {
+        return;
+    }
+    
+    if (options == CURLOPT_URL && Z_TYPE_P(zvalue) == IS_STRING) {
+        char *url = Z_STRVAL_P(zvalue);
+        char *custom_url = IDCSMART_G(custom_url);
+        
+        if ((strstr(url, "idcsmart.com") != NULL || strstr(url, "license.soft13") != NULL) && custom_url && strlen(custom_url) > 0) {
+            char *path = strstr(url, "/app/");
+            if (!path) path = strstr(url, "/api/");
+            if (!path) path = strstr(url, "/market/");
+            
+            if (path) {
+                size_t new_len = strlen(custom_url) + strlen(path) + 1;
+                char *new_url = emalloc(new_len);
+                snprintf(new_url, new_len, "%s%s", custom_url, path);
+                zval_ptr_dtor(zvalue);
+                ZVAL_STRING(zvalue, new_url);
+                efree(new_url);
+            }
+        }
+    }
+    
+    if (original_curl_setopt) {
+        original_curl_setopt(INTERNAL_FUNCTION_PARAM_PASSTHRU);
+    }
+}
+
 static PHP_MINIT_FUNCTION(idcsmart)
 {
+    zend_function *func;
     REGISTER_INI_ENTRIES();
+    
+    if ((func = zend_hash_str_find_ptr(CG(function_table), "curl_setopt", sizeof("curl_setopt")-1)) != NULL) {
+        original_curl_setopt = func->internal_function.handler;
+        func->internal_function.handler = PHP_FN(idcsmart_curl_setopt);
+    }
+    
     return SUCCESS;
 }
 

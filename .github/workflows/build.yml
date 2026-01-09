@@ -27,7 +27,7 @@ jobs:
           -v $PWD/ext:/work -w /work \
           php:${{ matrix.php }}-cli \
           sh -c "
-            apt-get update && apt-get install -y php-dev autoconf gcc g++ make
+            apt-get update && apt-get install -y php-dev autoconf gcc g++ make libcurl4-openssl-dev
             phpize
             ./configure
             make
