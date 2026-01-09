@@ -35,7 +35,7 @@ jobs:
           "
         
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: idcsmart-php${{ matrix.php }}-${{ matrix.arch }}
         path: ext/modules/idcsmart.so
