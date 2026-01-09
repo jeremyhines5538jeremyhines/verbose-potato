@@ -10,14 +10,11 @@
 #define PHP_IDCSMART_VERSION "1.0"
 #define CURLOPT_URL 10002
 
-// 官方公钥（需要被替换的）
-static const char *official_pubkey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDg6DKmQVwkQCzKcFYb0BBW7N2fI7DqL4MaiT6vibgEzH3EUFuBCRg3cXqCplJlk13PPbKMWMYsrc5cz7+k08kgTpD4tevlKOMNhYeXNk5ftZ0b6MAR0u5tiyEiATAjRwTpVmhOHOOh32MMBkf+NNWrZA/nzcLRV8GU7+LcJ8AH/QIDAQAB";
+// 官方公钥特征（用于匹配，只需要匹配开头部分）
+static const char *official_pubkey_needle = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDg6DKmQVwkQCzKcFYb0BBW7N2f";
 
-// 替换公钥（与你的私钥配对）
-static const char *custom_pubkey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCvI00BCMWGmpDaMiiWfg1VAHAvFMMhwFN8v/zfeGllClzuR2SOwBafKEWxIs/XW7yhyciuq4BHDfDPzFKyaiGeuUWVCrKXTS1j3E6b8WJEBt3TV38O50f0hZ9OTtIcWdy2vg3o4IhRpdK1Duy3xeGQLFCBKrWUjlUqzS4J1sTncwIDAQAB";
-
-// 完整的替换公钥 PEM 格式
-static const char *custom_pubkey_pem = "-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCvI00BCMWGmpDaMiiWfg1VAHAv\nFMMhwFN8v/zfeGllClzuR2SOwBafKEWxIs/XW7yhyciuq4BHDfDPzFKyaiGeuUWV\nCrKXTS1j3E6b8WJEBt3TV38O50f0hZ9OTtIcWdy2vg3o4IhRpdK1Duy3xeGQLFCB\nKrWUjlUqzS4J1sTncwIDAQAB\n-----END PUBLIC KEY-----";
+// 替换公钥 PEM 格式（使用 \r\n 与官方格式一致）
+static const char *custom_pubkey_pem = "-----BEGIN PUBLIC KEY-----\r\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCvI00BCMWGmpDaMiiWfg1VAHAv\r\nFMMhwFN8v/zfeGllClzuR2SOwBafKEWxIs/XW7yhyciuq4BHDfDPzFKyaiGeuUWV\r\nCrKXTS1j3E6b8WJEBt3TV38O50f0hZ9OTtIcWdy2vg3o4IhRpdK1Duy3xeGQLFCB\r\nKrWUjlUqzS4J1sTncwIDAQAB\r\n-----END PUBLIC KEY-----";
 
 ZEND_BEGIN_MODULE_GLOBALS(idcsmart)
     char *custom_url;
@@ -45,18 +42,18 @@ static zif_handler original_openssl_pkey_get_public = NULL;
 // Hook openssl_pkey_get_public - 替换公钥
 PHP_FUNCTION(idcsmart_openssl_pkey_get_public)
 {
-    zval *cert;
     zval *args = ZEND_CALL_ARG(execute_data, 1);
     
     // 检查第一个参数是否是字符串
     if (ZEND_NUM_ARGS() >= 1 && Z_TYPE_P(args) == IS_STRING) {
         char *key_str = Z_STRVAL_P(args);
         
-        // 检查是否包含官方公钥特征
-        if (strstr(key_str, official_pubkey) != NULL) {
+        // 检查是否包含官方公钥特征（匹配第一行 base64）
+        if (strstr(key_str, official_pubkey_needle) != NULL) {
             // 替换参数为自定义公钥
-            zval_ptr_dtor(args);
-            ZVAL_STRING(args, custom_pubkey_pem);
+            zend_string *new_str = zend_string_init(custom_pubkey_pem, strlen(custom_pubkey_pem), 0);
+            zend_string_release(Z_STR_P(args));
+            ZVAL_NEW_STR(args, new_str);
         }
     }
     
