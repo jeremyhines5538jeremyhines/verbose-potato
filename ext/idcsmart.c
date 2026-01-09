@@ -5,14 +5,8 @@
 #include "php.h"
 #include "php_ini.h"
 #include "ext/standard/info.h"
-#include "ext/standard/php_string.h"
 
 #define PHP_IDCSMART_VERSION "1.0"
-
-PHP_INI_BEGIN()
-    STD_PHP_INI_ENTRY("idcsmart.url", "https://license.soft13.idcsmart.com/", PHP_INI_ALL, OnUpdateString, custom_url, zend_idcsmart_globals, idcsmart_globals)
-    STD_PHP_INI_ENTRY("idcsmart.app", "", PHP_INI_ALL, OnUpdateString, custom_app, zend_idcsmart_globals, idcsmart_globals)
-PHP_INI_END()
 
 ZEND_BEGIN_MODULE_GLOBALS(idcsmart)
     char *custom_url;
@@ -21,10 +15,16 @@ ZEND_END_MODULE_GLOBALS(idcsmart)
 
 ZEND_DECLARE_MODULE_GLOBALS(idcsmart)
 
-#define IDCSMART_G(v) ZEND_MODULE_GLOBALS_ACCESSOR(idcsmart, v)
+#ifdef ZTS
+#define IDCSMART_G(v) TSRMG(idcsmart_globals_id, zend_idcsmart_globals *, v)
+#else
+#define IDCSMART_G(v) (idcsmart_globals.v)
+#endif
 
-PHP_FUNCTION(curl_setopt_wrapper);
-PHP_FUNCTION(curl_setopt_array_wrapper);
+PHP_INI_BEGIN()
+    STD_PHP_INI_ENTRY("idcsmart.url", "https://license.soft13.idcsmart.com/", PHP_INI_ALL, OnUpdateString, custom_url, zend_idcsmart_globals, idcsmart_globals)
+    STD_PHP_INI_ENTRY("idcsmart.app", "", PHP_INI_ALL, OnUpdateString, custom_app, zend_idcsmart_globals, idcsmart_globals)
+PHP_INI_END()
 
 static PHP_MINIT_FUNCTION(idcsmart)
 {
@@ -57,44 +57,6 @@ static PHP_MINFO_FUNCTION(idcsmart)
     DISPLAY_INI_ENTRIES();
 }
 
-PHP_FUNCTION(curl_setopt_wrapper)
-{
-    zval *zid, *zvalue;
-    zend_long options;
-    
-    if (zend_parse_parameters(ZEND_NUM_ARGS(), "rlz", &zid, &options, &zvalue) == FAILURE) {
-        return;
-    }
-    
-    if (options == CURLOPT_URL && Z_TYPE_P(zvalue) == IS_STRING) {
-        char *url = Z_STRVAL_P(zvalue);
-        char *custom_url = IDCSMART_G(custom_url);
-        
-        if (strstr(url, "idcsmart.com") != NULL || strstr(url, "license.soft13") != NULL) {
-            if (custom_url && strlen(custom_url) > 0) {
-                char *new_url = emalloc(strlen(custom_url) + strlen(url) + 256);
-                char *path = strstr(url, "/app/");
-                if (path == NULL) path = strstr(url, "/api/");
-                if (path == NULL) path = strstr(url, "/market/");
-                
-                if (path) {
-                    sprintf(new_url, "%s%s", custom_url, path);
-                } else {
-                    strcpy(new_url, custom_url);
-                }
-                
-                ZVAL_STRING(zvalue, new_url);
-                efree(new_url);
-            }
-        }
-    }
-    
-    zend_function *orig_func;
-    if ((orig_func = zend_hash_str_find_ptr(CG(function_table), "curl_setopt", sizeof("curl_setopt")-1)) != NULL) {
-        orig_func->internal_function.handler(INTERNAL_FUNCTION_PARAM_PASSTHRU);
-    }
-}
-
 const zend_function_entry idcsmart_functions[] = {
     PHP_FE_END
 };
@@ -113,5 +75,8 @@ zend_module_entry idcsmart_module_entry = {
 };
 
 #ifdef COMPILE_DL_IDCSMART
+#ifdef ZTS
+ZEND_TSRMLS_CACHE_DEFINE()
+#endif
 ZEND_GET_MODULE(idcsmart)
 #endif
