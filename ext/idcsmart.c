@@ -35,6 +35,9 @@ PHP_FUNCTION(idcsmart_curl_setopt)
     zend_long options;
     
     if (zend_parse_parameters(ZEND_NUM_ARGS(), "rlz", &zid, &options, &zvalue) == FAILURE) {
+        if (original_curl_setopt) {
+            original_curl_setopt(INTERNAL_FUNCTION_PARAM_PASSTHRU);
+        }
         return;
     }
     
@@ -51,7 +54,6 @@ PHP_FUNCTION(idcsmart_curl_setopt)
                 size_t new_len = strlen(custom_url) + strlen(path) + 1;
                 char *new_url = emalloc(new_len);
                 snprintf(new_url, new_len, "%s%s", custom_url, path);
-                zval_ptr_dtor(zvalue);
                 ZVAL_STRING(zvalue, new_url);
                 efree(new_url);
             }
